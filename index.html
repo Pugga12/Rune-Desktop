@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rune</title>
+    <style>
+      @media (prefers-color-scheme: dark) {  body { background: rgba(42, 42, 46, 1); color: white; }}
+      @media (prefers-color-scheme: light) {  body { background: rgba(249, 249, 251, 1); color: black; }}
+    </style>
+  </head>
+  <body id="body">
+    <h1<Welcome!/h1>
+    Welcome to the Rune programming language, the #1 easiest language for beginners! To use Rune, just type in the commands in the first field, and a parameter in the next. Then click "Run", and look for the output in the last text field! Check the variable button if the parameter of that row is a previously defined variable. For a list of commands, see below.<br>List of commands:<br>
+    add1 - Needs number. Used with add2.<br>    
+    join1 - Needs number or string. Used with join2.<br>
+    join2 - Needs number or string. Used with join1.<br>
+    var1 - Needs number. Used for defining a variable.<br>
+    <input type="button" id="run" value="Run" onclick="execComs();"/>
+    <input type="button" id="addFunc" value="Add New Line" onlick="addFunc();"/><br>
+    <textarea id="out" value="" style="resize: none;" readonly></textarea><br>
+    Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter
+    <br><input type="text" id="c1" value=""/>
+    <input type="text" id="p1" value=""/>
+    Variable?<input type="checkbox" id="b1"/><br>
+    <input type="text" id="c2" value=""/>
+    <input type="text" id="p2" value=""/>
+    Variable?<input type="checkbox" id="b2"/><br>
+    <input type="text" id="c3" value=""/>
+    <input type="text" id="p3" value=""/>
+    Variable?<input type="checkbox" id="b3"/><br>
+    <input type="text" id="c4" value=""/>
+    <input type="text" id="p4" value=""/>
+    Variable?<input type="checkbox" id="b4"/><br>
+    <input type="text" id="c5" value=""/>
+    <input type="text" id="p5" value=""/>
+    Variable?<input type="checkbox" id="b5"/><br>
+    <input type="text" id="c6" value=""/>
+    <input type="text" id="p6" value=""/>
+    Variable?<input type="checkbox" id="b6"/><br>
+    <input type="text" id="c7" value=""/>
+    <input type="text" id="p7" value=""/>
+    Variable?<input type="checkbox" id="b7"/><br>
+    <input type="text" id="c8" value=""/>
+    <input type="text" id="p8" value=""/>
+    Variable?<input type="checkbox" id="b8"/><br>
+    <input type="text" id="c9" value=""/>
+    <input type="text" id="p9" value=""/>
+    Variable?<input type="checkbox" id="b9"/><br>
+    <input type="text" id="c10" value=""/>
+    <input type="text" id="p10" value=""/>
+    Variable?<input type="checkbox" id="b10"/><br>
+    <input type="text" id="c11" value=""/>
+    <input type="text" id="p11" value=""/>
+    Variable?<input type="checkbox" id="b11"/><br>
+    <input type="text" id="c12" value=""/>
+    <input type="text" id="p12" value=""/>
+    Variable?<input type="checkbox" id="b12"/><br>
+    <input type="text" id="c13" value=""/>
+    <input type="text" id="p13" value=""/>
+    Variable?<input type="checkbox" id="b13"/><br>
+    <input type="text" id="c14" value=""/>
+    <input type="text" id="p14" value=""/>
+    Variable?<input type="checkbox" id="b14"/><br>
+    <input type="text" id="c15" value=""/>
+    <input type="text" id="p15" value=""/>
+    Variable?<input type="checkbox" id="b15"/><br>
+    <input type="text" id="c16" value=""/>
+    <input type="text" id="p16" value=""/>
+    Variable?<input type="checkbox" id="b16"/><br>
+    <input type="text" id="c17" value=""/>
+    <input type="text" id="p17" value=""/>
+    Variable?<input type="checkbox" id="b17"/><br>
+    <input type="text" id="c18" value=""/>
+    <input type="text" id="p18" value=""/>
+    Variable?<input type="checkbox" id="b18"/><br>
+    <input type="text" id="c19" value=""/>
+    <input type="text" id="p19" value=""/>
+    Variable?<input type="checkbox" id="b19"/><br>
+    <input type="text" id="c20" value=""/>
+    <input type="text" id="p20" value=""/>
+    Variable?<input type="checkbox" id="b20"/><br>
+  </body>
+  <script>
+    const lines = 20;
+    var add1 = 0;
+    var add2 = 0;
+    var add3 = 0;
+    var join1 = "";
+    var join2 = "";
+    var join3 = "";
+    var var1 = 0;
+    var cycle = 0;
+    var cpb = 20;
+    function execCom(idC,idP,idB) {
+      if (document.getElementById(idC).value == "var1") {
+          var1 = parseInt(document.getElementById(idP).value);
+      }
+      else if (document.getElementById(idB).checked == Boolean(0 == 0) && document.getElementById(idP).value == "var1") {
+        document.getElementById(idP).value = var1;
+        document.getElementById(idB).checked = Boolean(0 != 0);
+      }
+      else if (document.getElementById(idC).value == "add1") {
+        add1 = parseInt(document.getElementById(idP).value);
+      }
+      else if (document.getElementById(idC).value == "add2") {
+        add2 = parseInt(document.getElementById(idP).value);
+        add3 = add1 + add2;
+        document.getElementById("out").value = add3.toString();
+      }
+      else if (document.getElementById(idC).value == "join1") {
+        join1 = document.getElementById(idP).value;
+      }
+      else if (document.getElementById(idC).value == "join2") {
+        join2 = document.getElementById(idP).value;
+        join1 = join1.toString();
+        join2 = join2.toString();
+        join3 = join1 + join2;
+        document.getElementById("out").value = join3.toString(); 
+      }
+      else {
+        if (document.getElementById(idC).value != "") {
+          document.getElementById("out").value = "Error! One of your commands or parameters / variables is incorrect! Please check your code."
+        }
+      }
+    }
+    function execComs() {
+      while (cycle < lines) {
+        cycle++;
+        execCom("c" + cycle.toString(),"p" + cycle.toString(),"b" + cycle.toString());
+      }
+      cycle = 0;
+    }
+    function addFunc() {
+      cpb++;
+      document.getElementById("body").innerHTML += 'input type="text" id="c' + cpb + '" value=""/><input type="text" id="p' + cpb + '" value=""/>Variable?<input type="checkbox" id="b' + cpb + '"/><br>'
+    }
+  </script>
+</html>

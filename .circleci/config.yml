@@ -15,11 +15,12 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install Dependencies
-          command: npm install
+        name: Refresh APT Repositories
+        command: sudo apt-get update -y  
       - run:
-          name: Install dpkg and fakeroot
-          command: |
+          name: Install Dependencies
+          command: | 
+            npm install
             sudo apt-get update -y  
             sudo apt-get install -y dpkg fakeroot rpm
 
@@ -32,4 +33,4 @@ jobs:
           command: npm run make
 
       - store_artifacts:
-          path: ~/repo/out/make
+          path: out/make

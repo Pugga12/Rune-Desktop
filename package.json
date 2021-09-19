@@ -1,6 +1,6 @@
 {
-  "name": "jewel",
-  "version": "1.1.4",
+  "name": "Rune-Desktop",
+  "version": "1.2.0",
   "description": "A electron wrapper for the Rune programming language",
   "main": "main.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Pugga12/jewel.js.git"
   },
-  "author": "AddyPug & retro_person",
+  "author": "AddyPug/retro_person",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Pugga12/jewel.js/issues"
@@ -37,7 +37,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "jewel"
+            "name": "Rune-Desktop"
           }
         },
         {

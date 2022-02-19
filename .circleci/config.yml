@@ -15,8 +15,8 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-        name: Refresh APT Repositories
-        command: sudo apt-get update -y  
+          name: Refresh APT Repositories
+          command: sudo apt-get update -y  
       - run:
           name: Install Dependencies
           command: | 
